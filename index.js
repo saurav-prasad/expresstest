@@ -30,6 +30,6 @@ app.listen(port, () => {
     console.log("App running at port", port);
 })
 export const instance = new Razorpay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
+    key_id: "rzp_test_cHPGqZWYooG6s9",
+    key_secret: "oOWQjuH4EDAL6DJqjzMqqucb",
   });
