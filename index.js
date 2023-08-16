@@ -4,10 +4,11 @@ import cors from 'cors'
 import router from './routes/paymentRoutes.js'
 import Razorpay from 'razorpay'
 
-
 config({ path: "./config/config.env" })
+
 const app = express()
-const port = 3000
+const port = 3001
+console.log(process.env);
 
 
 app.use(cors())
@@ -29,6 +30,6 @@ app.listen(port, () => {
     console.log("App running at port", port);
 })
 export const instance = new Razorpay({
-    key_id: "rzp_test_cHPGqZWYooG6s9",
-    key_secret: "oOWQjuH4EDAL6DJqjzMqqucb",
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
   });
