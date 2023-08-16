@@ -18,18 +18,8 @@ app.post("/api/postkey", (req, res) => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-app.use('/', (req, res) => {
-    res.json({ success: true })
+app.use("/", (req, res) => {
+    res.sendFile('index.html' , { root : './'});
 })
 app.listen(port, () => {
     console.log("App running at port", port);
