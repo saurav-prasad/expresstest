@@ -2,14 +2,18 @@ import { instance } from "../index.js";
 import crypto from 'crypto'
 
 export const checkout = async (req, res) => {
-    console.log("create orderId request", req.body);
-    var options = {
-        amount: Number(req.body.amount * 100),  // amount in the smallest currency unit
-        currency: "INR",
-    };
-    const order = await instance.orders.create(options);
-    console.log("checkout", order);
-    res.status(200).json(order)
+    try {
+        console.log("create orderId request", req.body);
+        let options = {
+            amount: Number(req.body.amount * 100),  // amount in the smallest currency unit
+            currency: "INR",
+        };
+        const order = await instance.orders.create(options);
+        console.log("checkout", order);
+        res.status(200).json(order)
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export const paymentVerification = (req, res) => {
