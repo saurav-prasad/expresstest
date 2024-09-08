@@ -3,7 +3,7 @@ import { checkout, paymentVerification } from '../controllers/paymentController.
 import dotenv from 'dotenv'
 dotenv.config()
 
-const router = express()
+const router = express.Router()
 router.route('/checkout').post(checkout)
 router.route('/verifypayment').post(paymentVerification)
 router.route('/getkey').get((req, res) => {
