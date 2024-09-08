@@ -4,6 +4,9 @@ import cors from 'cors'
 import router from './routes/paymentRoutes.js'
 import Razorpay from 'razorpay'
 import dotenv from 'dotenv'
+import { createServer } from '@vercel/node';
+ // Vercel adapter for Node.js
+
 // config({ path: "./config/config.env" })
 
 const app = express()
@@ -38,3 +41,7 @@ export const instance = new Razorpay({
     'key_id': process.env.VERCEL_RAZORPAY_KEY_ID,
     'key_secret': process.env.VERCEL_RAZORPAY_KEY_SECRET,
 });
+
+// Export as a Vercel serverless function
+export default createServer(app); 
+// Vercel-specific export for serverless deployment
