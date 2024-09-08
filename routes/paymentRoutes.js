@@ -6,5 +6,14 @@ dotenv.config()
 const router = express()
 router.route('/checkout').post(checkout)
 router.route('/verifypayment').post(paymentVerification)
-router.route('/getkey').get((req, res) => res.json({ key: process.env.VERCEL_RAZORPAY_KEY_ID }))
+router.route('/getkey').get((req, res) => {
+    try {
+        res.json({
+            key: process.env.VERCEL_RAZORPAY_KEY_ID
+
+        })
+    } catch (error) {
+        console.log(error);
+    }
+})
 export default router
