@@ -7,9 +7,9 @@ import dotenv from 'dotenv'
 // config({ path: "./config/config.env" })
 
 const app = express()
-const port = 5001
+//const port = 5001
 dotenv.config()
-// const port = process.env.PORT || 3001
+const port = process.env.PORT || 5001
 
 // console.log(process.env.RAZORPAY_KEY_SECRET);
 
