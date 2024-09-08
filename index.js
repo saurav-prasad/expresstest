@@ -13,7 +13,6 @@ dotenv.config()
 
 // console.log(process.env.RAZORPAY_KEY_SECRET);
 
-
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
