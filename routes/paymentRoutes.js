@@ -1,6 +1,7 @@
 import express from 'express'
 import { checkout, paymentVerification } from '../controllers/paymentController.js'
-
+import dotenv from 'dotenv'
+dotenv.config()
 
 const router = express()
 router.route('/checkout').post(checkout)

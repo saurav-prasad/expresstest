@@ -1,6 +1,7 @@
 import { instance } from "../index.js";
 import crypto from 'crypto'
-
+import dotenv from 'dotenv'
+dotenv.config()
 export const checkout = async (req, res) => {
     try {
         console.log("create orderId request", req.body);
